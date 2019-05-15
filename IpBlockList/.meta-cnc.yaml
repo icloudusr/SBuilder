@@ -1,0 +1,79 @@
+# skillet preamble information used by panhandler
+# ---------------------------------------------------------------------
+# unique snippet name
+name: IpBlockList
+# label used for menu selection
+label: IP Block Example
+description: adds edls, tag and security rules
+
+# type of device configuration
+# common types are panorama, panos, and template
+# https://github.com/PaloAltoNetworks/panhandler/blob/develop/docs/metadata_configuration.rst
+type: panos
+# preload static or default-based templates
+extends:
+
+# grouping of like snippets for dynamic menu creation in panhandler
+labels:
+  collection:
+    - examples
+
+# ---------------------------------------------------------------------
+# end of preamble section
+
+# variables section
+# ---------------------------------------------------------------------
+# variables used in the configuration templates
+# type_hint defines the form field used by panhandler
+# type_hints can be text, ip_address, or dropdown
+variables:
+  - name: edlName
+    description: edl Name
+    default: myEdl
+    type_hint: text
+  - name: edlDescription
+    description: edl Description
+    default: myEdl Description
+    type_hint: text
+  - name: edlUrl
+    description: http://example.com
+    default: myEdl URL
+    type_hint: text
+  - name: tagName
+    description: tagName Description
+    default: myEdl Tag
+    type_hint: text
+  - name: tagDescription
+    description: tag Description
+    default: myTag Description
+    type_hint: text
+  - name: tagColor
+    description: tagColor Description
+    default: red
+    type_hint: dropdown
+    dd_list:
+      - key: blue
+        value: color3
+      - key: orange
+        value: color6
+      - key: red
+        value: color1
+# ---------------------------------------------------------------------
+# end of variables section
+
+# snippets section
+# ---------------------------------------------------------------------
+# snippets used for api configuration including xpath and element as file name
+# files will load in the order listed
+snippets:
+  - name: edl
+    xpath: /config/devices/entry[@name='localhost.localdomain']/vsys/entry[@name='vsys1']/external-list
+    file: edl.xml
+  - name: tag
+    xpath: /config/devices/entry[@name='localhost.localdomain']/vsys/entry[@name='vsys1']/tag
+    file: tag.xml
+  - name: securityrules
+    xpath: /config/devices/entry[@name='localhost.localdomain']/vsys/entry[@name='vsys1']/rulebase/security/rules
+    file: SecurityRules.xml  
+# ---------------------------------------------------------------------
+# end of snippets section
