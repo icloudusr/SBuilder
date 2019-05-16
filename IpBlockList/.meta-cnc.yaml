@@ -9,6 +9,7 @@ description: adds edls, tag and security rules
 # type of device configuration
 # common types are panorama, panos, and template
 # https://github.com/PaloAltoNetworks/panhandler/blob/develop/docs/metadata_configuration.rst
+
 type: panos
 # preload static or default-based templates
 extends:
@@ -40,15 +41,15 @@ variables:
     default: myEdl URL
     type_hint: text
   - name: tagName
-    description: tagName Description
-    default: myEdl Tag
+    description: tag Name
+    default: myEdlTag
     type_hint: text
   - name: tagDescription
     description: tag Description
-    default: myTag Description
+    default: myTagDescription
     type_hint: text
   - name: tagColor
-    description: tagColor Description
+    description: tagColorDescription
     default: red
     type_hint: dropdown
     dd_list:
