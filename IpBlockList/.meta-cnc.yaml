@@ -42,7 +42,7 @@ variables:
     type_hint: text
   - name: tagName
     description: tag Name
-    default: myEdlTag
+    default: myTagName
     type_hint: text
   - name: tagDescription
     description: tag Description
