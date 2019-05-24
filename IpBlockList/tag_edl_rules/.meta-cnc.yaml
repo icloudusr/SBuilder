@@ -28,7 +28,7 @@ labels:
 # type_hint defines the form field used by panhandler
 # type_hints can be text, ip_address, or dropdown
 variables:
-  - name: edlName
+  - name: edl_name
     description: edl Name
     default: myEdl
     type_hint: text
@@ -40,15 +40,15 @@ variables:
     description: http://example.com
     default: myEdl URL
     type_hint: text
-  - name: tagName
+  - name: tag_name
     description: tag Name
     default: myTagName
     type_hint: text
-  - name: tagDescription
+  - name: tag_description
     description: tag Description
     default: myTagDescription
     type_hint: text
-  - name: tagColor
+  - name: tag_color
     description: tagColorDescription
     default: red
     type_hint: dropdown
@@ -76,7 +76,7 @@ snippets:
     file: tag.xml
   - name: securityrules
     xpath: /config/devices/entry[@name='localhost.localdomain']/vsys/entry[@name='vsys1']/rulebase/security/rules
-    file: SecurityRules.xml
+    file: rules.xml
 
 # ---------------------------------------------------------------------
 # end of snippets section
